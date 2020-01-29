@@ -1,0 +1,573 @@
+@import url(reset.css);
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v14/JTUSjIg1_i6t8kCHKm459Wlhzg.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Poppins Regular'), local('Poppins-Regular'), url(https://fonts.gstatic.com/s/poppins/v9/pxiEyp8kv8JHgFVrJJfedw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('Poppins SemiBold'), local('Poppins-SemiBold'), url(https://fonts.gstatic.com/s/poppins/v9/pxiByp8kv8JHgFVrLEj6Z1xlEA.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: local('Poppins ExtraBold'), local('Poppins-ExtraBold'), url(https://fonts.gstatic.com/s/poppins/v9/pxiByp8kv8JHgFVrLDD4Z1xlEA.ttf) format('truetype');
+}
+html {
+  overflow: hidden;
+}
+body {
+  height: 100vh;
+  perspective: 1px;
+  transform-style: preserve-3d;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.headerParallax {
+  width: 100vw;
+  height: 80vh;
+  box-sizing: border-box;
+  transform-style: preserve-3d;
+  z-index: -1;
+}
+.headerParallax::before {
+  content: '';
+  width: 100vw;
+  height: 80vh;
+  top: 0;
+  left: 0;
+  background-image: url("../img/header.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: -1;
+  transform: translateZ(-1px) scale(2.3);
+  filter: brightness(80%);
+}
+.header {
+  margin: 0 auto;
+  width: 100vw;
+  height: 80vh;
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+}
+.header .logoCoffee {
+  display: block;
+  width: 119px;
+  height: 73px;
+  margin: 21px 0 44px 0;
+}
+.header .menuNav {
+  display: flex;
+  flex-direction: row;
+}
+.header .menuNav li {
+  transition: transform 0.2s linear;
+}
+.header .menuNav li:hover {
+  transform: scale(1.2, 1.2);
+}
+.header .menuNav li a {
+  text-decoration: none;
+  margin: 0 23px;
+  padding: 4px 0;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.9em;
+}
+.header .menuNav li a:hover {
+  border-bottom: 2px solid #ffffff;
+}
+.header .logoVintage {
+  width: 159px;
+  margin: 58px 0 40px 0;
+}
+.header .headerTitleH1 {
+  color: #ffffff;
+  text-transform: lowercase;
+  font-size: 4em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  margin: 0 0 28px 0;
+}
+.header .discoverCoffeeButton {
+  color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: none;
+  width: 168px;
+  height: 48px;
+  background-color: #B66615;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.7em;
+  letter-spacing: 0.15em;
+  transition: transform 0.2s linear, background-color 0.2s linear, color 0.2s linear;
+}
+.header .discoverCoffeeButton:hover {
+  transform: scale(1.2, 1.2);
+  background-color: #ffffff;
+  color: #B66615;
+}
+.textNav {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.9em;
+}
+.button {
+  color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: none;
+  width: 168px;
+  height: 48px;
+  background-color: #B66615;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.7em;
+  letter-spacing: 0.15em;
+  transition: transform 0.2s linear, background-color 0.2s linear, color 0.2s linear;
+}
+.button:hover {
+  transform: scale(1.2, 1.2);
+  background-color: #ffffff;
+  color: #B66615;
+}
+.pageHistoryAndWhyChooseUs {
+  width: 100vw;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  z-index: 10;
+  position: relative;
+}
+.pageHistoryAndWhyChooseUs .innerHistoryAndWhyChooseUs {
+  width: 66.66666667vw;
+  height: 1070px;
+}
+.history {
+  height: 50%;
+  margin: 135px 0 0 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.history .historyImgBlock {
+  display: flex;
+  flex-direction: column;
+}
+.history .historyImgBlock .historyImgBig {
+  position: relative;
+  height: 320px;
+}
+.history .historyImgBlock .historyImgSmall {
+  position: relative;
+  height: 240px;
+  left: 190px;
+  bottom: 95px;
+}
+.history .historyTextBlock {
+  width: 377px;
+}
+.history .historyTextBlock .historyTextTitleH2 {
+  margin: 0 0 20px 0 ;
+  color: #B66615;
+  font-size: 2.5em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+.history .historyTextBlock .historyTextPar {
+  text-align: justify;
+  color: #888888;
+  font-size: 0.9em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  line-height: 2.5em;
+}
+.whyChooseUs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.whyChooseUs .whyChooseUsTextTitleH2 {
+  margin: 0 0 20px 0 ;
+  color: #B66615;
+  font-size: 2.5em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+.whyChooseUs .whyChooseUsTextUl {
+  list-style-type: disc;
+  text-align: justify;
+  color: #888888;
+  font-size: 0.9em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  line-height: 2.5em;
+}
+.whyChooseUs .whyChooseUsImg {
+  height: 375px;
+}
+.titleH2 {
+  color: #B66615;
+  font-size: 2.5em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+.par {
+  color: #888888;
+  font-size: 0.9em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  line-height: 2.5em;
+}
+.hoursParallax {
+  width: 100vw;
+  height: 535px;
+  box-sizing: border-box;
+  transform-style: preserve-3d;
+  z-index: -2;
+}
+.hoursParallax::before {
+  content: '';
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-image: url("../img/clock_back.jpg");
+  background-size: cover;
+  background-position: top center ;
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: -2;
+  transform: translateZ(-1px) scale(2);
+}
+.hours {
+  width: 100vw;
+  height: 535px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.hours .hoursTitleH2 {
+  color: #B66615;
+  font-size: 2.5em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+.hours .hoursIconClock {
+  margin: 30px 0 30px 0;
+}
+.hours .hoursWorking {
+  display: flex;
+  flex-direction: row;
+  line-height: 2em;
+}
+.hours .hoursWorking .hoursSundayToTuesday {
+  width: 170px;
+  margin: 0 25px 0 0;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.9em;
+}
+.hours .hoursWorking .hoursSundayToTuesday p {
+  display: flex;
+  justify-content: flex-end;
+}
+.hours .hoursWorking .hoursSundayToTuesday p:nth-child(2) {
+  font-size: 1.2em;
+  font-family: 'Montserrat', sans-serif;
+}
+.hours .hoursWorking .hoursFridayAndSaturday {
+  width: 170px;
+  margin: 0 0 0 25px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.9em;
+}
+.hours .hoursWorking .hoursFridayAndSaturday p {
+  display: flex;
+  justify-content: flex-start;
+}
+.hours .hoursWorking .hoursFridayAndSaturday p:nth-child(2) {
+  font-size: 1.2em;
+  font-family: 'Montserrat', sans-serif;
+}
+.pageMenuPrice {
+  background-color: #10181B;
+  height: 880px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  z-index: 20;
+  position: relative;
+}
+.pageMenuPrice .innerMenuPrice {
+  width: 66.66666667vw;
+  display: flex;
+  flex-direction: column;
+}
+.pageMenuPrice .innerMenuPrice .menuPriceTitleH3Block {
+  margin: 120px 0 0 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.pageMenuPrice .innerMenuPrice .menuPriceTitleH3Block h3 {
+  margin: 0 0 20px 0;
+  color: #B66615;
+  font-size: 1.5em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.pageMenuPrice .innerMenuPrice .menuPriceBlock {
+  margin: 70px 0 0 0;
+  display: flex;
+}
+.pageMenuPrice .innerMenuPrice .menuPriceBlock .menuPrice {
+  display: flex;
+  margin: 0 30px;
+}
+.pageMenuPrice .innerMenuPrice .menuPriceBlock .menuPrice ul {
+  width: 19.04761905vw;
+}
+.pageMenuPrice .innerMenuPrice .menuPriceBlock .menuPrice ul li {
+  padding: 27px 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.pageMenuPrice .innerMenuPrice .menuPriceBlock .menuPrice ul li span:nth-child(1) {
+  color: #888888;
+}
+.pageMenuPrice .innerMenuPrice .menuPriceBlock .menuPrice ul li span:nth-child(2) {
+  color: #B66615;
+}
+.pageMenuPrice .innerMenuPrice .moreCoffeeButtonBlock {
+  display: flex;
+  justify-content: center;
+  margin: 80px 0 0 0;
+}
+.pageMenuPrice .innerMenuPrice .moreCoffeeButtonBlock .moreCoffeeButton {
+  color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: none;
+  width: 168px;
+  height: 48px;
+  background-color: #B66615;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.7em;
+  letter-spacing: 0.15em;
+  transition: transform 0.2s linear, background-color 0.2s linear, color 0.2s linear;
+}
+.pageMenuPrice .innerMenuPrice .moreCoffeeButtonBlock .moreCoffeeButton:hover {
+  transform: scale(1.2, 1.2);
+  background-color: #ffffff;
+  color: #B66615;
+}
+.titleH3 {
+  color: #B66615;
+  font-size: 1.5em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.textMenuPrice {
+  font-size: 0.9em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.gallery {
+  width: 100vw;
+  height: 900px;
+  position: relative;
+  z-index: 20;
+}
+.gallery .galleryBlock {
+  display: flex;
+  flex-direction: row;
+}
+.gallery .galleryBlock li {
+  height: 450px;
+  width: 33.33333333vw;
+  background-repeat: no-repeat;
+  background-size: auto 33.33333333vw;
+  background-position: center center;
+}
+.gallery .galleryBlock1 li:nth-child(1) {
+  background-image: url("../img/katalog1.jpg");
+}
+.gallery .galleryBlock1 li:nth-child(2) {
+  background-image: url("../img/katalog2.jpg");
+}
+.gallery .galleryBlock1 li:nth-child(3) {
+  background-image: url("../img/katalog3.jpg");
+}
+.gallery .galleryBlock2 li:nth-child(1) {
+  background-image: url("../img/katalog4.jpg");
+}
+.gallery .galleryBlock2 li:nth-child(2) {
+  background-image: url("../img/katalog5.jpg");
+}
+.gallery .galleryBlock2 li:nth-child(3) {
+  background-image: url("../img/katalog6.jpg");
+}
+.backgroundGallery {
+  background-repeat: no-repeat;
+  background-size: auto 33.33333333vw;
+  background-position: center center;
+}
+.reservation {
+  height: 735px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.reservation .reservationTitleH2 {
+  color: #B66615;
+  font-size: 2.5em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+.reservation p {
+  width: 700px;
+  text-align: center;
+  margin: 65px 0 0 0;
+  color: #888888;
+  font-size: 0.9em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  line-height: 2.5em;
+}
+.reservation a {
+  color: #000000;
+  font-size: 2em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 40px 0 55px 0;
+  text-decoration: none;
+}
+.reservation a:hover {
+  color: #393939;
+}
+.reservation ul {
+  text-align: center;
+}
+.reservation ul .reservationTitleH3 {
+  margin: 25px 0 15px 0;
+  color: #B66615;
+  font-size: 1.5em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.reservation ul li {
+  color: #888888;
+  font-size: 1em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  line-height: 1.4em;
+}
+.map {
+  width: 100vw;
+  height: 550px;
+}
+.footer {
+  width: 100vw;
+  height: 400px;
+  background-color: #10181B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.footer .logoCoffee {
+  display: block;
+  width: 149px;
+  height: 93px;
+}
+.footer ul {
+  display: flex;
+  flex-direction: row;
+  margin: 50px 0 15px 0;
+}
+.footer ul li {
+  transition: transform 0.2s linear;
+  margin: 0 5px;
+}
+.footer ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  background-color: #2A3032;
+  border-radius: 10px;
+  text-decoration: none;
+}
+.footer ul li a img {
+  height: 20px;
+}
+.footer ul li:hover {
+  transform: scale(1.2, 1.2);
+}
+.footer p {
+  color: #888888;
+  font-size: 0.9em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  line-height: 1.4em;
+}
+/*# sourceMappingURL=style.css.map */

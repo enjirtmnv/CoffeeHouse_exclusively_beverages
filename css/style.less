@@ -1,0 +1,494 @@
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Poppins:400,600,800&display=swap');
+
+@pageWidth: 100vw;
+@fontFamilyPoppins: 'Poppins', sans-serif;
+@fontFamilyMontserrat: 'Montserrat', sans-serif;
+@innerWidth: 2/3 * @pageWidth;
+@whiteColor: #ffffff;
+@caramelColor: #B66615;
+@greyColor: #888888;
+
+html{
+  overflow: hidden;
+}
+
+body{
+  height: 100vh;
+  perspective: 1px;
+  transform-style: preserve-3d ;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.headerParallax{
+  width: 100vw;
+  height: 80vh;
+  box-sizing: border-box;
+  transform-style: preserve-3d ;
+  z-index: -1;
+  &::before{
+    content: '';
+    width: 100vw;
+    height: 80vh;
+    top: 0;
+    left: 0;
+    background-image: url("../img/header.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: -1;
+    transform: translateZ(-1px) scale(2.3);
+    filter: brightness(80%);
+  }
+}
+
+.header{
+  margin: 0 auto;
+  width: @pageWidth;
+  height: 80vh;
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  .logoCoffee{
+    display: block;
+    width: 119px;
+    height: 73px;
+    margin: 21px 0 44px 0;
+  }
+  .menuNav{
+    display: flex;
+    flex-direction: row;
+    li{
+      transition: transform 0.2s linear;
+      &:hover{
+        transform: scale(1.2,1.2);
+      }
+    }
+    li a{
+      text-decoration: none;
+      margin: 0 23px;
+      padding: 4px 0;
+      .textNav;
+      &:hover{
+        border-bottom: 2px solid @whiteColor;
+      }
+    }
+  }
+  .logoVintage{
+    width: 159px;
+    margin: 58px 0 40px 0;
+  }
+  .headerTitleH1{
+    color: @whiteColor;
+    text-transform: lowercase;
+    font-size: 4em;
+    font-family: @fontFamilyPoppins;
+    font-weight: 800;
+    margin: 0 0 28px 0;
+  }
+  .discoverCoffeeButton{
+    .button;
+  }
+}
+
+.textNav{
+  color: @whiteColor;
+  text-transform: uppercase;
+  font-family: @fontFamilyPoppins;
+  font-weight: 600;
+  font-size: 0.9em;
+}
+
+.button{
+  color: @whiteColor;
+  text-transform: uppercase;
+  text-decoration: none;
+  width: 168px;
+  height: 48px;
+  background-color: @caramelColor;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: @fontFamilyPoppins;
+  font-weight: 600;
+  font-size: 0.7em;
+  letter-spacing: 0.15em;
+  transition: transform 0.2s linear, background-color  0.2s linear, color 0.2s linear;
+  &:hover{
+    transform: scale(1.2,1.2);
+    background-color: @whiteColor;
+    color: @caramelColor;
+  }
+}
+
+.pageHistoryAndWhyChooseUs{
+  width: @pageWidth;
+  background-color: @whiteColor;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  z-index: 10;
+  position: relative;
+  .innerHistoryAndWhyChooseUs{
+    width: @innerWidth;
+    height: 1070px;
+  }
+}
+
+.history{
+  height: 50%;
+  margin: 135px 0 0 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  .historyImgBlock{
+    display: flex;
+    flex-direction: column;
+    .historyImgBig{
+      position: relative;
+      height: 320px;
+    }
+    .historyImgSmall{
+      position: relative;
+      height: 240px;
+      left: 190px;
+      bottom: 95px;
+    }
+  }
+  .historyTextBlock{
+    width: 377px;
+    .historyTextTitleH2{
+      margin: 0 0 20px 0 ;
+      .titleH2;
+    }
+    .historyTextPar{
+      text-align: justify;
+      .par;
+    }
+  }
+}
+
+.whyChooseUs{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  .whyChooseUsTextTitleH2{
+    margin: 0 0 20px 0 ;
+    .titleH2;
+  }
+  .whyChooseUsTextUl{
+    list-style-type: disc;
+    text-align: justify;
+    .par;
+  }
+  .whyChooseUsImg{
+    height: 375px;
+  }
+}
+
+.titleH2{
+  color: @caramelColor;
+  font-size: 2.5em;
+  font-family: @fontFamilyPoppins;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+.par{
+  color: @greyColor;
+  font-size: 0.9em;
+  font-family: @fontFamilyPoppins;
+  font-weight: 400;
+  line-height: 2.5em;
+}
+
+.hoursParallax{
+  width: 100vw;
+  height: 535px;
+  box-sizing: border-box;
+  transform-style: preserve-3d;
+  z-index: -2;
+  &::before{
+    content: '';
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-image: url("../img/clock_back.jpg");
+    background-size: cover;
+    background-position: top center ;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: -2;
+    transform: translateZ(-1px) scale(2);
+  }
+}
+
+.hours{
+  width: @pageWidth;
+  height: 535px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .hoursTitleH2{
+    .titleH2;
+  }
+  .hoursIconClock{
+    margin: 30px 0 30px 0;
+  }
+  .hoursWorking{
+    display: flex;
+    flex-direction: row;
+    line-height: 2em;
+    .hoursSundayToTuesday{
+      width: 170px;
+      margin: 0 25px 0 0;
+      .textNav;
+      p{
+        display: flex;
+        justify-content: flex-end;
+      }
+      p:nth-child(2){
+        font-size: 1.2em;
+        font-family: @fontFamilyMontserrat
+      }
+    }
+    .hoursFridayAndSaturday{
+      width: 170px;
+      margin: 0 0 0 25px;
+      .textNav;
+      p{
+        display: flex;
+        justify-content: flex-start;
+      }
+      p:nth-child(2){
+        font-size: 1.2em;
+        font-family: @fontFamilyMontserrat
+      }
+    }
+  }
+}
+
+.pageMenuPrice{
+  background-color: #10181B;
+  height: 880px;
+  width: @pageWidth;
+  display: flex;
+  justify-content: center;
+  z-index: 20;
+  position: relative;
+  .innerMenuPrice{
+    width: @innerWidth;
+    display: flex;
+    flex-direction: column;
+    .menuPriceTitleH3Block{
+      margin: 120px 0 0 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      h3{
+        margin: 0 0 20px 0;
+        .titleH3;
+      }
+    }
+    .menuPriceBlock{
+      margin: 70px 0 0 0;
+      display: flex;
+
+      .menuPrice{
+        display: flex;
+        margin: 0 30px;
+        ul {
+          width: @innerWidth / 3.5;
+          li {
+            padding: 27px 0;
+            display: flex;
+            justify-content: space-between;
+            .textMenuPrice;
+            span:nth-child(1) {
+              color: @greyColor;
+            }
+            span:nth-child(2) {
+              color: @caramelColor;
+            }
+          }
+        }
+      }
+    }
+    .moreCoffeeButtonBlock{
+      display: flex;
+      justify-content: center;
+      margin: 80px 0 0 0;
+      .moreCoffeeButton{
+        .button;
+      }
+    }
+  }
+}
+
+
+.titleH3 {
+  color: @caramelColor;
+  font-size: 1.5em;
+  font-family: @fontFamilyPoppins;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.textMenuPrice{
+  font-size: 0.9em;
+  font-family: @fontFamilyPoppins;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.gallery{
+  width: @pageWidth;
+  height: 900px;
+  position: relative;
+  z-index: 20;
+  .galleryBlock{
+    display: flex;
+    flex-direction: row;
+    li{
+      height: 450px;
+      width: @pageWidth / 3;
+      .backgroundGallery;
+    }
+  }
+  .galleryBlock1{
+    li:nth-child(1){
+      background-image: url("../img/katalog1.jpg");
+    }
+    li:nth-child(2){
+      background-image: url("../img/katalog2.jpg");
+    }
+    li:nth-child(3){
+      background-image: url("../img/katalog3.jpg");
+    }
+  }
+  .galleryBlock2{
+    li:nth-child(1){
+      background-image: url("../img/katalog4.jpg");
+    }
+    li:nth-child(2){
+      background-image: url("../img/katalog5.jpg");
+    }
+    li:nth-child(3){
+      background-image: url("../img/katalog6.jpg");
+    }
+  }
+}
+
+.backgroundGallery{
+  background-repeat: no-repeat;
+  background-size: auto @pageWidth / 3;
+  background-position: center center;
+}
+
+.reservation{
+  height: 735px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .reservationTitleH2{
+    .titleH2;
+  }
+  p{
+    width: 700px;
+    text-align: center;
+    margin: 65px 0 0 0;
+    .par;
+  }
+  a{
+    color: #000000;
+    font-size: 2em;
+    font-family: @fontFamilyPoppins;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 40px 0 55px 0;
+    text-decoration: none;
+  }
+  a:hover{
+    color: #393939;
+  }
+  ul{
+    text-align: center;
+    .reservationTitleH3{
+      margin: 25px 0 15px 0;
+      .titleH3
+    }
+    li{
+      color: @greyColor;
+      font-size: 1em;
+      font-family: @fontFamilyPoppins;
+      font-weight: 400;
+      line-height: 1.4em;
+    }
+  }
+}
+
+.map{
+  width: @pageWidth;
+  height: 550px;
+}
+
+.footer{
+  width: @pageWidth;
+  height: 400px;
+  background-color: #10181B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .logoCoffee{
+    display: block;
+    width: 149px;
+    height: 93px;
+  }
+  ul{
+    display: flex;
+    flex-direction: row;
+    margin: 50px 0 15px 0;
+    li{
+      transition: transform 0.2s linear;
+      margin: 0 5px;
+      a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        width: 40px;
+        background-color: #2A3032;
+        border-radius: 10px;
+        text-decoration: none;
+
+        img{
+          height: 20px;
+        }
+      }
+    }
+    li:hover{
+      transform: scale(1.2,1.2);
+    }
+  }
+  p{
+    color: @greyColor;
+    font-size: 0.9em;
+    font-family: @fontFamilyPoppins;
+    font-weight: 400;
+    line-height: 1.4em;
+  }
+}
+
+
+
+
+
