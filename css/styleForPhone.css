@@ -81,7 +81,7 @@
   margin: 58px 0 40px 0;
 }
 .header .headerTitleH1 {
-  color: #7b007b;
+  color: #ffffff;
   text-transform: lowercase;
   font-size: 4em;
   font-family: 'Poppins', sans-serif;
@@ -298,7 +298,7 @@
 }
 .pageMenuPrice {
   background-color: #10181B;
-  height: 1650px;
+  height: 1680px;
   width: 100vw;
   display: flex;
   justify-content: center;
